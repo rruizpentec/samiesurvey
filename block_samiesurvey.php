@@ -67,7 +67,7 @@ class block_samiesurvey extends block_base {
             if ($courseid != null) {
                 $this->content->text = html_writer::tag('a', get_string('gobacktocourse', 'block_samiesurvey'),
                         array(
-                            'href' => $CFG->wwwroot."/course/view.php?id=$courseid",
+                            'href'  => $CFG->wwwroot."/course/view.php?id=$courseid",
                             'class' => 'btn btn-default'));
             } else {
                 $this->content->text = get_string('accesstocoursemessage', 'block_samiesurvey');
