@@ -98,15 +98,16 @@ class block_samiesurvey extends block_base {
                     }
                     $params = 'afg_id_lms='.$afgidlms.'&courseid='.$COURSE->id;
                     if ($canfillin) {
-                        $this->content->text .= html_writer::tag('a', get_string('fillsurvey', 'block_samiesurvey'),
+                        $this->content->text .= html_writer::tag('a', 
+                                get_string('fillsurvey', 'block_samiesurvey'),
                                 array(
                                     'class' => 'btn btn-default',
                                     'href' => $CFG->wwwroot.'/blocks/samiesurvey/fillsurvey.php?'.$params));
                     }
                     if ($canviewlists) {
                         $this->content->text .= html_writer::start_tag('p');
-                        $this->content->text .= html_writer::tag('a', get_string('listofuserswithfilledsurvey',
-                                'block_samiesurvey'),
+                        $this->content->text .= html_writer::tag('a', 
+                                get_string('listofuserswithfilledsurvey', 'block_samiesurvey'),
                                 array(
                                     'class' => 'btn btn-default',
                                     'href' => $CFG->wwwroot.'/blocks/samiesurvey/userslist.php?filled=1&'.$params));
