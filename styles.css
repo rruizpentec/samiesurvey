@@ -2,6 +2,7 @@
     font-style: italic;
 }
 
-.block_samiesurvey_button {
+.block_samiesurvey .btn {
+    margin-top: 5px;
     width: 93%;
 }

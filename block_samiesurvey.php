@@ -68,7 +68,7 @@ class block_samiesurvey extends block_base {
                 $this->content->text = html_writer::tag('a', get_string('gobacktocourse', 'block_samiesurvey'),
                         array(
                             'href' => $CFG->wwwroot."/course/view.php?id=$courseid",
-                            'class' => 'btn btn-default block_samiesurvey_button'));
+                            'class' => 'btn btn-default'));
             } else {
                 $this->content->text = get_string('accesstocoursemessage', 'block_samiesurvey');
             }
@@ -99,18 +99,24 @@ class block_samiesurvey extends block_base {
                     $params = 'afg_id_lms='.$afgidlms.'&courseid='.$COURSE->id;
                     if ($canfillin) {
                         $this->content->text .= html_writer::tag('a', get_string('fillsurvey', 'block_samiesurvey'),
-                                array('href' => $CFG->wwwroot.'/blocks/samiesurvey/fillsurvey.php?'.$params));
+                                array(
+                                    'class' => 'btn btn-default',
+                                    'href' => $CFG->wwwroot.'/blocks/samiesurvey/fillsurvey.php?'.$params));
                     }
                     if ($canviewlists) {
                         $this->content->text .= html_writer::start_tag('p');
                         $this->content->text .= html_writer::tag('a', get_string('listofuserswithfilledsurvey',
                                 'block_samiesurvey'),
-                                array('href' => $CFG->wwwroot.'/blocks/samiesurvey/userslist.php?filled=1&'.$params));
+                                array(
+                                    'class' => 'btn btn-default',
+                                    'href' => $CFG->wwwroot.'/blocks/samiesurvey/userslist.php?filled=1&'.$params));
                         $this->content->text .= html_writer::end_tag('p');
                         $this->content->text .= html_writer::start_tag('p');
                         $this->content->text .= html_writer::tag('a',
                                 get_string('listofuserswithoutfilledsurvey', 'block_samiesurvey'),
-                                array('href' => $CFG->wwwroot.'/blocks/samiesurvey/userslist.php?filled=0&'.$params));
+                                array(
+                                    'class' => 'btn btn-default',
+                                    'href' => $CFG->wwwroot.'/blocks/samiesurvey/userslist.php?filled=0&'.$params));
                         $this->content->text .= html_writer::end_tag('p');
                     }
                 } else {
